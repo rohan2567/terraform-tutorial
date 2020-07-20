@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terraform</title>
+
+	<meta name=”viewport” content=”width=device-width,  initial-scale=1, user-scalable=yes″>
+<meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
+<meta charset="UTF-8"> 
+
+</head>
+<style>
+
+	
+@viewport
+  {
+    width:extend-to-zoom;
+    zoom:1.0;
+  }
+@-ms-viewport
+  {
+     width:extend-to-zoom;
+    zoom:1.0;
+  }
+	
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    margin:0;
+    padding:0;
+    vertical-align:baseline;
+    }
+    
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display:block;
+    }
+    
+    html, body {background: #181818; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
+    
+    .clear {clear: both;}
+    
+    p {
+        font-size: 1em;
+        line-height: 1.4em;
+        margin-bottom: 20px;
+        color: #444;
+    }
+    
+    #cv {
+        width: 90%;
+        max-width: 800px;
+        background: #f3f3f3;
+        margin: 30px auto;
+    }
+    
+    .mainDetails {
+        padding: 25px 35px;
+        border-bottom: 2px solid #cf8a05;
+        background: #ededed;
+    }
+    
+    #name h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+        margin-bottom: -6px;
+    }
+    
+    #name h2 {
+        font-size: 2em;
+        margin-left: 2px;
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+    }
+    
+    #mainArea {
+        padding: 0 40px;
+    }
+    
+    #headshot {
+        width: 12.5%;
+        float: left;
+        margin-right: 30px;
+    }
+    
+    #headshot img {
+        width: 100%;
+        height: auto;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+    }
+    
+    #name {
+        float: left;
+    }
+    
+    #contactDetails {
+        float: right;
+    }
+    
+    #contactDetails ul {
+        list-style-type: none;
+        font-size: 0.9em;
+        margin-top: 2px;
+    }
+    
+    #contactDetails ul li {
+        margin-bottom: 3px;
+        color: #444;
+    }
+    
+    #contactDetails ul li a, a[href^=tel] {
+        color: #444; 
+        text-decoration: none;
+        -webkit-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+    }
+    
+    #contactDetails ul li a:hover { 
+        color: #cf8a05;
+    }
+    
+    
+    section {
+        border-top: 1px solid #dedede;
+        padding: 20px 0 0;
+    }
+    
+    section:first-child {
+        border-top: 0;
+    }
+    
+    section:last-child {
+        padding: 20px 0 10px;
+    }
+    
+    .sectionTitle {
+        float: left;
+        width: 25%;
+    }
+    
+    .sectionContent {
+        float: right;
+        width: 72.5%;
+    }
+    
+    .sectionTitle h1 {
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+        font-style: italic;
+        font-size: 1.5em;
+        color: #cf8a05;
+    }
+    
+    .sectionContent h2 {
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
+        margin-bottom: -2px;
+    }
+    
+    .subDetails {
+        font-size: 0.8em;
+        font-style: italic;
+        margin-bottom: 3px;
+    }
+    
+    .keySkills {
+        list-style-type: none;
+        -moz-column-count:3;
+        -webkit-column-count:3;
+        column-count:3;
+        margin-bottom: 20px;
+        font-size: 1em;
+        color: #444;
+    }
+    
+    .keySkills ul li {
+        margin-bottom: 3px;
+    }
+    
+    @media all and (min-width: 602px) and (max-width: 800px) {
+        #headshot {
+            display: none;
+        }
+        
+        .keySkills {
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        column-count:2;
+        }
+    }
+    
+    @media all and (max-width: 601px) {
+        #cv {
+            width: 95%;
+            margin: 10px auto;
+            min-width: 280px;
+        }
+        
+        #headshot {
+            display: none;
+        }
+        
+        #name, #contactDetails {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .sectionTitle, .sectionContent {
+            float: none;
+            width: 100%;
+        }
+        
+        .sectionTitle {
+            margin-left: -2px;
+            font-size: 1.25em;
+        }
+        
+        .keySkills {
+            -moz-column-count:2;
+            -webkit-column-count:2;
+            column-count:2;
+        }
+    }
+    
+    @media all and (max-width: 480px) {
+        .mainDetails {
+            padding: 15px 15px;
+        }
+        
+        section {
+            padding: 15px 0 0;
+        }
+        
+        #mainArea {
+            padding: 0 25px;
+        }
+    
+        
+        .keySkills {
+        -moz-column-count:1;
+        -webkit-column-count:1;
+        column-count:1;
+        }
+        
+        #name h1 {
+            line-height: .8em;
+            margin-bottom: 4px;
+        }
+    }
+    
+    @media print {
+        #cv {
+            width: 100%;
+        }
+    }
+    
+    @-webkit-keyframes reset {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @-webkit-keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes reset {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @-moz-keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes reset {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    .instaFade {
+        -webkit-animation-name: reset, fade-in;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-timing-function: ease-in;
+        
+        -moz-animation-name: reset, fade-in;
+        -moz-animation-duration: 1.5s;
+        -moz-animation-timing-function: ease-in;
+        
+        animation-name: reset, fade-in;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in;
+    }
+    
+    .quickFade {
+        -webkit-animation-name: reset, fade-in;
+        -webkit-animation-duration: 2.5s;
+        -webkit-animation-timing-function: ease-in;
+        
+        -moz-animation-name: reset, fade-in;
+        -moz-animation-duration: 2.5s;
+        -moz-animation-timing-function: ease-in;
+        
+        animation-name: reset, fade-in;
+        animation-duration: 2.5s;
+        animation-timing-function: ease-in;
+    }
+     
+    .delayOne {
+        -webkit-animation-delay: 0, .5s;
+        -moz-animation-delay: 0, .5s;
+        animation-delay: 0, .5s;
+    }
+    
+    .delayTwo {
+        -webkit-animation-delay: 0, 1s;
+        -moz-animation-delay: 0, 1s;
+        animation-delay: 0, 1s;
+    }
+    
+    .delayThree {
+        -webkit-animation-delay: 0, 1.5s;
+        -moz-animation-delay: 0, 1.5s;
+        animation-delay: 0, 1.5s;
+    }
+    
+    .delayFour {
+        -webkit-animation-delay: 0, 2s;
+        -moz-animation-delay: 0, 2s;
+        animation-delay: 0, 2s;
+    }
+    
+    .delayFive {
+        -webkit-animation-delay: 0, 2.5s;
+        -moz-animation-delay: 0, 2.5s;
+        animation-delay: 0, 2.5s;
+	}
+	
+
+    .headings
+    {
+        font-size: xx-large;
+    }
+    .mini-headings
+    {
+        font-size: x-large;
+        font-style: oblique;
+        color:darkgoldenrod
+    }
+
+
+
+
+
+
+</style>
+
+
+
+
+
+<body id="top">
+
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAACYCAMAAAC4aCDgAAAAjVBMVEX///8ICAgAAAAMDAwSEhIPDw8UFBQXFxcZGRnu7u4GBgYbGxva2toeHh719fUqKiq+vr5kZGSqqqqdnZ3U1NRbW1slJSVWVlbLy8vy8vKnp6c7OztoaGjn5+dLS0u0tLR1dXWSkpKMjIzGxsZ8fHyEhISfn5+8vLw3Nzfg4OBCQkJJSUlvb28pKikxMDHBcOdlAAAPQklEQVR4nO2dCXvqrtOGZVgbJO7Ruu9V25/f/+O9AyTRuNS0p/9Xa3mu65xqNNvtwAwwkEolKCgoKCgoKCjohuJ7X8Azqdp9ufclPI+qAKvRvS/iWVQFBpv1va/iSVSFiAMM3u59HU+hKhDKqYBB9d5X8gRyMLlKOExD1fmv8pbJhWRAZ8Gx/5tSmAnRVMOmee/L+d3yxZwxQyJNGNR6976g3yxvmYRQGhFKKNBGKOvflodJPUz8o0UI4r+tA0zqYDJD+T4E8d/TMUxbzglnQsNucu/r+pUqwEScjAl8S2EcgvivqwqUMqwvM0VWNKIQgvivy8LklBQUiYjzKATxX9YlmIQjTK4oDIIn+pIuwqSCREQJAVCr3/sCf5MuwrQ4ucQoiQF0t/e+xN8jC/OcpXNE7v8EYBkce0ldg0kizlwrE1vttXnwRKV0HSZj+AHnUigOyeu9r/NXqEouVZmpZSJNw6jCGD6YZhlV+RWYxDfWhaacO5jxzw6xvz7hiH3WBfeZqLYwR9D6ucI+WukndGslYEbUWJhbgPFP9X/0d1S3f+hYD6TyllkFJWG8+IFzTmpcK/kTR3owlYfZBqaMTqb/GsS3G0CMNOoJh+q/ApMbRQxEq39x7dspQKI4Y/yvwpQWZg8oIpDU9n981xO/zvfAOYawGCA8Yf9zKZjMwlwABkm2Hxmts/s9s+pvwPVE28P8VZiEpzCZpUCJrEWi83VnXB9jCdfGd+tTeMIx+vIw69YyXfeH1lCD5ItVZ/WDg2BUCGFh8gATSSCPSArDhAAzKx/Eo9+JqJJUajcMyhl/Wpg8+hwm9TARgesV4YygE0Hjei9b77X2YHdkUdap8qTFHDmykjBZOvIWZV+HckF8cwP++9HxIZ8RJt7nzWJ+gHnygVK1m4OYvQZlyh2leMinhHlx2KIkTK0x/v6069hWlpwaFgWYn8PEPTUzEnbNa0H8yzxhMqHJ+RmeE2YksVXzXZgYf4sIY/rx5UHM/gCIEISRv1LM0S9TXdoBFUhmrtnQhDbOg/j6WALjIg3S/wRMjBop+yZM4vKUFG4XLFkVo06sLBUVdszYfpO7bvtnh7ndgzHlQ6OLHytNpKKRPgrit0sAk9ikOrRM6saNo6h4yCeEWdl2AP4DGwPi3V6BSn3b/BJMRKUZV9pgqwi6WRC/HoBB18SE9FnJzogLez8nTAwEO9gKIowyGV1xRZ/AtKVXczRAjY6IQ9cG8e0NSNsM5/bHEZ4mKbZaqXhSmJX4bQBMSzQuQXNERTO6DpO4AuwLMjYSG3i8PhDutrkPD1872oUb6N/7tv9Xilu201YorTI8hRqO+s7hazCPrNTBbMHnXyMRMwJm977p/51elgniNCyzy3PLLAETDdLCnMPlJJEDTJHQ57VMq2oDFP/PFsboYjEvBdNZ5grIDZjM8OeGibXimAo7hcUxK8SU6ejkTZjMwZzeskz07OpZHVCuuB8RKUFyogw/vveyMH2dObwJ0w54PjtM1KxGa0oYDGS+ATN1QOPbMP+AZVptG5qZSEn6jWKewtxEtxwQ108bZ56o3YlAEVPoFnfpMWWL+f5KyucRTGwu/Q2Ylbi+o0TyiGbzg74G8yXh4ibMpxxQu6x4nYDAsiiQqEvgdFlwhH+KKLfMGpHi864TKv+MZVq9rBLKsH1pb90nu25vRY/EhkadioN5o1Pvj8H0QTzTxPVQZDBv0dQB5jX1usZOQuecl4WZWaa4L8wfzhj/GcVNA9hi9zBHJWBKD5PeGebbg1p9aw+aCQ/zVsSTW+a9YY4edULyaMqYjDzMm948L+bBm18ReqLUMqNbI288DY3ubJkPrcXAwyTy5shbCvNmLvLfhemWLH2xWXDRSR/8Gcy0mBfGO7M9/PCGW2rhL8O0egGmtNJMCxt6ckIv+COWtYCOijkGA8yPUTJGmF2QSpjECPmEadhf0ACMkYxLaZOxL/uiSzBdCoLLQWCMKU4SImViYP6oHvf/SZOd0Er5aQKXK8VLMIlPj7F5SW5pGjtlg338cZSo0QxAc+nGiL5gmbZWoM4yMR5QmvDkCaf6fUOjJRoWiajrQCpXZ2IpF8IlIDAhDaM/NwPzFyv2Gde9MbUdIIowys+S2y7D9IVbMKGkgH0rzF23HR0u96USv3XBKGUIVn2nyW2X60whqBRM4k4SVmH9FKseGD10y2vGvfdIo3XydDW+WzBdSOTSb8YBpdcEpGQmXUpmsomknbVHisOYF2BG1vlEHKtLs3vCWdHfVBOkkYrv+y4LM57XmHSwfKPILdyTwYwczLS9Y2edRiIh70+ewvElrUFQbrDp0t26vtfqGEAyJpWyzpq7ACiFiVWkDSsxFsJq1RhFpYZZiCyP1AK78KtCPKLrwTT3AtuFNamN5HbhHgx90qFex5dxZaTQyD8x0+DCC7Iwfas8SdIp0osWA9us0Wh7CoNyoXOYGttJQnLJ8TPYPOHiJv8mB9Ou6K60jmDf996kv6FGYXtdciJVCnPDMRIyRmNMRBRl3bA435k8TDu+lmiGcdHer0I+6taMxBIusMZUHuYAmzyKMbtN60E/rNZ1LgsTPbOd2Us0iyQ3PgDfTjq2k00wxYyCIW7ZUTRfrpnE7cHvXJSHyayncb0WgsN+6CrDeLHDmFxj+Rcwxfdjgm4KwyhiOgHlZTlv7op52nthtITN3FlnPDGAYbkSsMR33Qhbm4bBJjyO4JpmkPdMus5JrBWNMkmy8CP+sw3YtP85vuwAWmboHPpMKzuHwi554kcs0PiEQgeecF/W7fw+bAHZORQNYCQE6Z/p9cMueMLSzg07Y5JrhGsAvVG6lEy1Q1za/5SoZQjSP9UMMAA6DE1G2YTIiCdkM3dfiRdumGy1C0H6DbWwFF9O1GCawe7NV53WIkMBv6kWXF5mJtIMW5OMd9dhZKe0WoC+5xJMrgzRWpj/3kPXb1ldhynQB2HTSPJaeIBDSVmYF1d0V9q1M20vSHj2TUm17PNZLlmmXdJEoGEy2yzq3Psyf4esA7pomXYNcoxABaNcyeG9L/N36CpMly9jYXKesI97X+bv0DWYLsvA/WNSB8ssp5ZdJvdybmbWFkozh4NuyraAyqVhB93UtRbQsViAWU42NLo13SLALKlgmT+oFrAA86eEliluwQwOqKTWCLPc6jFBN9UKMH9Ordtz9wPMsmqB1OLiVKojmFGAWUoIU52vHXwCkwSYpdQCcWvmM+EBZjld62kvwAzFvJzWdoEJcnVy2gnMt/l02Oh0O6jGdNV8rVTqXS987+dNrrrdj1WrWc8H2Sfd7nA5a74VRzlfj6f/Ho4xy3dr9z/GnfXikLkY4xem8/5kkY9InT0Nqn3nwSpsASXSLtb4CVGRw5x8WI6dZGD/H64tTOLQWrg+deZjPxwi8PF/y5RDk01xQ2Nc6xwnMazg6B2858dIh0K3H8DHnc4edvkEhJh17XG6m13Lb3gxJ5MT4uTOY1UtMCaRTHBJ6LXF3s5aQINl/rKuTvI8PgbuT9zrvvsNTeMAvTYbRw+lrNbG3cM+cDo234Nd3Znddg6N9EeJuYe4bYHPNKkmUByFXt17Xdm4OQAlDZFnU6ly0bM6czDNX9blCYgUJt70xt98CrMymo8P43Lz915ySE2EkyzFdrTK80cW+3TMJOYZqqY/Z3vTKYwA9DbdZeXOep3ZSRXMzxO4wDLiZ3FmKZiVddcZVwbzpT2B7KMY3iofh4GlU5j74/P1qK9eDzArNVe+F7V1clzz7pqzBxhe2U6V5p5j+mSg47XdI37WAioHc1Jz5pXBtPM0MwfRH7xWqpBb3wnMSVIovjPjfpQjmF1n8wvTm7CDD2ru4tlDRB2LLhVEuYFdu+Qe44UGO4eTX7wczOb+BGY1s8y4a7l0cjgnMD9WhbcjX6UewRw4y6zrRTzOt71s3iqzBxnfn4yZMkql47ucy+N+uW/BfB37cnyAucrudQHWoN42mWkWYY5O/dHQVYUHmD3lvlBXi0ovypzaaow23K08hl5n4PJeKXHPADleTYaewtxM85fXvLnN/PRMcpj13JsPPdX8IZVFmFs4iR+9weUwR+mvVFe4Wze9tBd7jIeBiVe7SgzhTGrNqTbHE/XhJAmhYJk+4G4sU3P62G2r1Wq7P9ins66aycJuqXfzZScy0+vX0g3Qb/dQ7a2Lgtrk5MKaHiabuyPPkmV2auS3ZX4a2Ie9pAeCibcxtBiFROeuD8Wcczd15UjHMFmngRpO56n9TUUtqSXJuJWV4SbsE9RgmXuV/tibXjWLE0EZVLL7cGDa0cllNR2j2NTckVfZb+JgYvG2B1u4Qz0UTKzHOpFG22Rafgbz02K+mywmDX0ouM3aerGYmsMur3mrZph6mmIlWT0t5mtvmWL5tuibg4/xMF9twn28d0d6FAeUKW7uwWghCk9qgZNg+Ngy1Ym3mNo6czt+z+OeZoK446XO51r2YPTiNFr64Omszjz1aa5ejJmtMyc6998eZqWfjCprHzi0Hgym9UQEmNAFb34K87g5eQlmZbvPfdbEOaC4m+Mdmr0t1KhN6oKKMF+zxneqkQ/NY4+xCdnjmdNTx+PlhPngvfUQcWZRo2Vijsd/KRQDv8ruE5hL7817aQM6g1nZJumdjni9Elu9vrzOd27TSZw52xQmI6x9rB8n3iZX2RkX2r9os+7Yb2k9ZLbeoguQLrZn/8/BpHo/wD2Dudr4v/0s8HlL2zP1dNG9/uBQJbZ935EpwhwVOixGaTmIa35rPE57UBYmPfUqqxdad2+bX9bbGPzcVM4FPe2N6R7gnsGcZ3Fmdov1rHHYBOus493xwTruSLuTtvn66DHpL42Bt9N4kMWZtan726tlp852Xz/q04he1wkkWqEv0oIWK7FK4/D+zJu3UrupxJ13Vzx7+ywmGspK5bhJXrHeyYaWw9O5rcv8jNVOXgeMs20Lz7q6OZ0HMnncBSfjeQLSPhbg7JFJy4Ph1Hmz59SuekiTgxPYuapstMu6N2LbUTQsFsXIOvn+2eyYvmEf/clkPoZGzv4jP+ubqx1G49MFBHqPPGepOtTYSlfsFGbzYI2LpOY0GKeE24fvxlNnVNPDBozk50UCTVvOR+eLho8mYxukL9uHj1oH5D33i6xOd3p5xMXHD6o3iEk4hKkrP6PJGHge2gX9o+JWAmGFsh/T6zJMjg4KCiqhOCwrFRQUFBQUFBRUeeyunIP+D6H86b2gYM8XAAAAAElFTkSuQmCC">
+		</div>
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo">Terraform</h1>
+			<!-- <h2 class="quickFade delayThree">DevOps</h2> -->
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+                <li>What is Terraform</li>
+                <li>Why Terraform ? </li>
+                <li>Terraform Workflow</li>
+                <li>Terraform Commands</li>
+                <li>Terraform Basics </li>
+                <li>Terraform and AWS </li>
+                <li>Packer </li>
+                <li>Docker on ECR and ECS </li>
+                <li> AWS EKS </li>
+
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+
+	    <div id="mainArea" class="quickFade delayFive">
+            <p>
+                <center>
+                <div class="headings">
+                    What is Terraform?
+                </div>
+                </center>
+                Terraform is an open-source tool for building and changing infrastructure safetly and efficiently.
+
+                <br><br>
+                Terraform uses a Push approach, and therefore initiates the provisioning process by interacting directly with providers to communicate the desired infrastructure. 
+                    <br><br>
+                Terraform itself is a CLI tool, and can be downloaded from ‘the official release page’. It is developed by Hashicorp so, naturally, relies on the HashiCorp Configuration Language (HCL) for creating declarations. HCL strives to be both human and machine friendly, being fully JSON compatible while also supporting comments and variable interpolation etc. Terraform files themselves are referred to as ‘configuration files’ and have the file extensions .tf and .tf.json.
+<br>
+<br>
+                <div class="mini-headings">
+                    What is infrastructure as code?
+                </div>
+                It consists of managing a set of resources (computing, network, storage, etc.) using the same approach developers use to manage application code.<br><br>
+            Using Infrastructure as Code as part of your deployment process has a number of immediate benefits to your workflow:<br>
+                <br>
+                <div style="color: darkblue"> Speed </div> This one speaks for itself really, automation beats manually navigating through an interface to deploy and connect up resources, hands down.
+
+<div style="color: darkblue"> Relaiblity</div> With a large set of infrastructure, it becomes so easy to misconfigure a resource or provision the services in the wrong order. With IaC the resources will be configured exactly as declared, and implicit/explicit dependencies can be used to ensure the creation order.
+
+<div style="color: darkblue"> Expermentation </div> With the ease at which the infrastructure can be deployed, experimental changes can be readily investigated with scaled down resources to minimise the cost. Once approved, everything can be scaled up for production deployments.
+
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    Why Terraform ?
+                </div>
+                </center>
+                <div class="mini-headings">
+                Features Of Terraform
+                </div>
+Terraform lets you define infrastructure in config/code and will enable you to rebuild/change and track changes to infrastructure with ease. Terraform provides a high-level description of infrastructure.
+<br><br>
+Terraform is the only sophisticated tool that is completely platform agnostic as well as supports other services while there are a few alternatives, but they are focused on a single cloud provider.
+<br><br>
+Terraform enables you to implement all kinds of coding principles like having your code in source control, the ability to write automated tests, etc
+<br><br>
+Terraform is the right tool for infrastructure management as many other tools have a severe impedance mismatch from trying to wrangle an API designed for configuring management to control an infrastructure environment. Instead, Terraform matches correctly with what you want to do- the API aligns with the way you think about infrastructure.
+<br><br>
+Terraform has a lively community and is open source; there is a massive community developing around this tool. Many people are already using it, and it’s easier to find people who know how to use it, plugins, extensions, professional support, etc. This also means Terraform is evolving at a much faster rate. They do releases very often.
+<br><br>
+Terraform’s speed and operations are exceptional. One cool thing about Terraform is, it’s plan command lets you see what changes you’re about to apply before you apply them. Code reuse feature and Terraform tends to make most changes faster than similar tools like CloudFormation.
+<br><br>            
+                <div class="mini-headings">
+                Terraform vs Chef 
+                </div>
+Chef is a configuration management tool, versus the provisioning tool that Terraform is. 
+<br><br>
+Chef is concerned with installation and management of software on existing servers, while Terraform provisions the servers themselves. In this case, when using Docker or Packer, Terraform is a better choice than a configuration management tool. 
+<br><br>
+Chef defaults to a mutable infrastructure paradigm leading to hard to diagnose configuration bugs, but Terraform treats every change as a deployment of a new service configuration. 
+<br><br>
+Chef also represents a procedural style to code writing and requires running a master server for state storing as well as agent software on each configurable server.
+<br><br>
+                <div class="mini-headings">
+                Terraform vs Puppet
+                </div>
+Similarly to Chef, Puppet is also a configuration management tool used to install and manage software on already existing servers. 
+<br><br>
+It also requires a master server for storing the infrastructure state as well as installation of an agent software for installing the latest configuration management updates.
+<br><br>
+Puppet is also 4 years older than Chef (released in 2005). However, Puppet has a more declarative style, just like Terraform.                
+<br><br>
+                <div class="mini-headings">
+             Terraform vs Ansible 
+                </div>
+Every growing startup or tech organization wants to automate apps and IT infrastructure. 
+<br><br>
+Ansible is a simple way to do that. An open-source software provisioning, configuration management, and application-deployment tool comes with its own declarative language. Ansible is an automation tool that helps drive complexity away and accelerate DevOps initiatives.
+<br><br>
+Terraform acts like an orchestrator, using Packer for automation. Terraform is more of an infrastructure provisioning tool. Terraform talks to VMWare, AWS, GCP, and deploys infrastructure. From the house of HashiCorp, Terraform allows the creation, management and improvement of infrastructure. An open source code drives APIs into declarative configuration files.
+<br><br>
+                 <div class="mini-headings">
+             Terraform vs CloudFormation
+                </div>
+CloudFormation is similar to Terraform thanks to its declarative style. 
+<br><br>
+It is also a provisioning tool, just like Terraform. 
+<br><br>
+However, from other tools, CloudFormation is the only non-open-source one. The tool belongs to AWS services, which means it can only be used within the AWS scope.       
+<br><br>
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    Workflow of Terraform
+                </div>
+                </center>
+                notes
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    Terraform Commands
+                </div>
+                </center>
+                <br>
+                <center>
+                    <img src="assets/Terraform/commands.png">
+                </center>
+                <center>
+                    <img src="assets/Terraform/commands2.png">
+                </center><br><br>
+
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    Terraform Basics
+                </div>
+                </center>
+                <div class="mini-headings">Variables</div>
+To make infrastructure code re-usable and version controlled, we need to paramterized the configrations with help of variables.
+<br><br>
+Variables can be defined as :<center>
+                    <img src="assets/Terraform/v0.png">
+                </center><br>
+The arguments that are accepted within block body (between {})
+<br><br>
+type :
+Valid values are string,list and map. If no type field is provided, variable type willbe inferred based on default. Ifno default is provided, it is assumed as string.
+<br><br>
+default :
+It sets default value for a variable.
+<br><br>
+description :
+A human-friendly description of variable.
+
+<br><br>
+<div style="color: darkblue">Example : </div>
+Lets create a variable.tf file and provider.tf file.
+<center>
+                    <img src="assets/Terraform/v2.png">
+                </center><br>
+To access variables, provide variable prefixxed with "var".
+<center>
+                    <img src="assets/Terraform/v3.png">
+                </center><br>
+<div style="color: darkblue">Variable type field values</div>
+<div style="color: darkred"> String : </div>
+String values are simple and represent a basic key to value mapping where the key is the variable name.
+<center>
+                    <img src="assets/Terraform/v4.png">
+                </center>
+
+A multi-line string value can be provided using heredoc syntax.
+<center>
+                    <img src="assets/Terraform/v5.png">
+                </center>
+
+<div style="color: darkred"> Map: </div>
+A map value is a lookup table from string keys to string values. This is useful for selecting a value based on some other provided value.
+
+A common use of maps is to create a table of machine images per region :
+<center>
+                    <img src="assets/Terraform/v6.png">
+                </center>
+
+
+<div style="color: darkred"> List : </div>
+String indexed by integers starting from zero.
+<center>
+                    <img src="assets/Terraform/v7.png">
+                </center>
+<div style="color: darkred"> Boolean: </div>
+<center>
+                    <img src="assets/Terraform/v8.png">
+                </center>
+
+<div style="color: darkblue"> Environmemt Variables : </div>
+Used to set the value of an input variable in the root module.
+Name of env variable must be TF_VAR followed by variable name and value of variable.
+<br><br>
+Example :
+<br>
+<center>$ TF_VAR_image=ami-b374d5a5<br>
+$ TF_VAR_amis='["ami-abc123" , "ami-qer123"]'</center>
+<br><br>
+
+<div style="color: darkblue"> Variable File </div>
+To persist variable values, create a file and assign variables within "terraform.tfvars" file.
+Terraform automatically loads them to populate variables.
+If the file is located somewhere else, you can pass the path of file using "-var-file" flag.
+ 
+<center>
+                    <img src="assets/Terraform/v9.png">
+                </center>
+<br>
+<center><div style="color: darkgreen">$ terraform apply -var-file=vars1.tfvars
+</div></center>
+
+
+                <div class="mini-headings">Outputs</div>
+While creating complex infrastructures , terraform stores all attribute values for all your responses. But you may only be interested in a few values such as ip address, load balancer ip, VPN address etc.
+<br><br>
+Output define values taht will be highlighted to the user when terraform aaplies and can be queried easily using "output command".
+<br><br>
+<div style="color: darkblue"> Defining outputs : </div>
+<center>
+                    <img src="assets/Terraform/o1.png">
+                </center><br>
+Outputs can be marked as containing sensitive material by setting sensitive attribute to true.
+<center>
+                    <img src="assets/Terraform/o2.png">
+                </center><br>
+<div style="color: darkblue">Viewing Outputs</div>
+<center>
+                    <img src="assets/Terraform/15.png" width="730px">
+                </center>
+Outputs is listed in another file. <br><br>
+
+                <div class="mini-headings">Data sources</div>
+A lot of data is available by AWS, in a structured format using the API.
+Terraform also exposes this information using datasources.
+<br><br>
+Data source provides with dynamic information,that can always change, that you can then use as an input in Terraform and then use it.
+<br><br>
+For example, there's a datasource that provides you with a list of "AMIs" or a list of availability zones.
+Another great example is a datasource that gives you all IP addresses in use by AWS.
+<br><br>
+Here is an example which is used to get available subnets in a vpc.<br>
+I have a vpc which i have given a tag as "Name" and value as "My_TF_Demo"
+<br>
+<center><br>
+                    <img src="assets/Terraform/ds1.png">
+                </center>
+<br><br>
+<center>
+                    <img src="assets/Terraform/ds2.png">
+                </center><br>
+<center>
+                    <img src="assets/Terraform/ds3.png">
+                </center>
+<br>
+                <center>
+                    <img src="assets/Terraform/ds4.png">
+                </center>
+<br><div style="color: darkblue">Output : </div><br>
+ <center>
+                    <img src="assets/Terraform/ds5.png">
+                </center>
+
+                
+                <center>
+                    <img src="assets/Terraform/ds_output.png" width="730px"> 
+                </center>
+<br>
+                <div class="mini-headings">Iterations</div>
+
+Terraform does not have for loops like other traditional procedural languages.
+<br><br>
+However, terraform resource has a meta-parameter called "count".
+This parameter defines how many copies of resource to create.
+<br>
+<center>
+                    <img src="assets/Terraform/i1.png"> 
+                </center><br><div style="color: darkblue">To create instances in multiple zones :</div>
+Create instances in different availabilty zone using count.index and element function.
+<br>
+<br>
+<div style="color: darkred">Using List Method :</div>
+<br>
+ <center>
+                    <img src="assets/Terraform/i2.png"> 
+                </center>
+ <center>
+                    <img src="assets/Terraform/i.png"> 
+                </center>
+<br><div style="color: darkred">Using data source : </div>
+ <center>
+                    <img src="assets/Terraform/i4.png"> 
+                </center> <center>
+                    <img src="assets/Terraform/i5.png" width="733px"> 
+                </center>
+                <br>
+Here count(10) is greater than availabilty zone(3). 
+In this case , element function will automatically a "wrap" around using a standard mod function.
+<br><br>
+Therefore, above code will create 10 instances as follows :<br>
+<center>
+4 in us-east-1a<br>
+3 in us-east-1b<br>
+3 in us-east-1c
+</center>
+To output ip addresses of all instances :
+<br>
+<center>
+                    <img src="assets/Terraform/i7.png"> 
+                </center>
+<br>
+
+                <div class="mini-headings">Provisioners</div>
+Terraform not only helps in infrastructure creation and management, but also in provisioning them during resource creation and deletion.
+<br><br>
+Provisioners are used to execute scripts or shell commands on a local or remote machine as a part of resource creation or deletion.
+<br><br>
+Provisioners can be used to bootstrap a resource ,cleanup before destroy , run configrations management etc.
+<br><br>
+<div style="color: darkblue">List of supported Providers :</div><br>
+<center>
+                    <img src="assets/Terraform/p1.png"> 
+                </center>
+<br>
+
+<div style="color: darkblue">Defining a Provisioner :</div>
+Add a provisioner block within a resource block.
+Multiple provisioner blocks can even be added.
+<br><center>
+                    <img src="assets/Terraform/p2.png"> 
+                </center><br><br>
+<div style="color: darkblue">Running provisioners :</div>
+Provisioners by-default run only when a resource is created, not during updating or any other lifecycle.
+<br><br>
+If a creation-time provisioner fails, resource is marked as "tainted". 
+A tainted resource will be planned for deletion and recreation upon next terraform apply.<br><br>
+<div style="color: darkblue">Failure Behaviour :</div>
+By default, provisoner that fail cause an error,
+but by using "With_on_failure", we can correct it.
+<br>The values it uses are :<br><center>
+                    <img src="assets/Terraform/p.png"> 
+                </center> 
+<center>
+                    <img src="assets/Terraform/p4.png"> 
+                </center>
+<br>
+<div style="color: darkblue">Destroy Provisioners :</div>
+Provisioners can be defined that run only during a destroy operation. 
+<center>
+                    <img src="assets/Terraform/p5.png"> 
+                </center><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="mini-headings">Modules</div>
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    Terraform and AWS
+                </div>
+                </center>
+                <div class="mini-headings">VPC's</div>
+
+
+                <div class="mini-headings">EBS Volumes</div>
+
+
+                <div class="mini-headings">User Data</div>
+
+
+                <div class="mini-headings">RDS</div>
+
+
+                <div class="mini-headings">IAM </div>
+
+
+                <div class="mini-headings">AutoScaling</div>
+
+
+                <div class="mini-headings">Elastic Load Balancer (ELB)</div>
+
+
+                <div class="mini-headings">Application Load Balancer (ALB)</div>
+
+
+                <div class="mini-headings">Elastic Beanstack</div>
+
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    Packer
+                </div>
+                </center>
+                notes
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    Docker on ECR and ECS
+                </div>
+                </center>
+                notes
+            </p>
+            <hr>
+
+
+            <p>
+                <center>
+                <div class="headings">
+                    AWS EKS
+                </div>
+                </center>
+                notes
+            </p>
+            <hr>
+            
+
+
+
+            <br>
+	    </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3753241-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
